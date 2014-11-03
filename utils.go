@@ -13,7 +13,7 @@ import (
 // less than or equal to (z) or a tilde (~).
 func cleanPathString(s string) string {
 	return strings.Map(func(r rune) rune {
-		if r >= 0x2d && r <= 0x7a || r == '~' {
+		if r >= 0x2a && r <= 0x7a && r != 0x2c || r == '~'{
 			return r
 		}
 		return -1
